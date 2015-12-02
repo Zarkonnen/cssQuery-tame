@@ -87,18 +87,9 @@ cssQuery.clearCache = function($selector) {
 	} else cache = {};
 };
 
-// allow extensions
+// don't allow extensions
 var modules = {};
 var loaded = false;
-cssQuery.addModule = function($name, $script) {
-	if (loaded) eval("$script=" + String($script));
-	modules[$name] = new $script();;
-};
-
-// hackery
-cssQuery.valueOf = function($code) {
-	return $code ? eval($code) : this;
-};
 
 // -----------------------------------------------------------------------
 // declarations
